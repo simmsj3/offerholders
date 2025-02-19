@@ -1,104 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Aston University</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-</head>
-<body>
-    <nav class="nav-container">
-        <div class="nav-content">
-            <div class="logo">
-                <img src="assets/aston-logo.png" alt="Aston University Birmingham UK Logo">
-            </div>
-            <div class="nav-links">
-                <a href="#">Courses</a>
-                <a href="#">Student life</a>
-                <a href="#">Research</a>
-                <a href="#">For Business</a>
-                <a href="#">About</a>
-            </div>
-        </div>
-    </nav>
+:root {
+    --aston-purple: #4B2E83;
+    --aston-gold: #B5A36A;
+}
 
-    <div class="hero">
-        <h1>Welcome to Aston University</h1>
-        <p>Discover your potential at one of the UK's leading universities</p>
-    </div>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-    <div class="container">
-        <div class="card-grid">
-            <div class="card">
-                <div class="feature-icon">🎓</div>
-                <h2>Academic Excellence</h2>
-                <p>Join a university ranked in the top 25 for teaching quality in the UK. Our courses are designed with your career in mind.</p>
-                <a href="https://www.aston.ac.uk/study" class="cta-button">Explore Courses</a>
-            </div>
-            <div class="card">
-                <div class="feature-icon">🌆</div>
-                <h2>Prime Location</h2>
-                <p>Located in the heart of Birmingham, enjoy a vibrant city life while studying at our modern campus.</p>
-                <a href="https://www.aston.ac.uk/birmingham" class="cta-button">Discover Birmingham</a>
-            </div>
-            <div class="card">
-                <div class="feature-icon">💼</div>
-                <h2>Career Success</h2>
-                <p>82% of our graduates find graduate-level jobs within 15 months of graduating.</p>
-                <a href="https://www.aston.ac.uk/careers" class="cta-button">Career Services</a>
-            </div>
-        </div>
-    </div>
+.nav-container {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3 class="counter">150+</h3>
-                    <p>Years of Academic Excellence</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter">100+</h3>
-                    <p>Student Nationalities</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter">82%</h3>
-                    <p>Graduate Employment Rate</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <div class="container">
-        <h2>Why Choose Aston?</h2>
-        <div class="card-grid">
-            <div class="card">
-                <div class="feature-icon">🔬</div>
-                <h2>Research Excellence</h2>
-                <p>Our research has real-world impact. Join a community that's pushing boundaries and making discoveries.</p>
-                <a href="https://www.aston.ac.uk/research" class="cta-button">Explore Research</a>
-            </div>
-            <div class="card">
-                <div class="feature-icon">🌍</div>
-                <h2>Global Community</h2>
-                <p>Join our diverse community of students from over 120 countries worldwide.</p>
-                <a href="https://www.aston.ac.uk/international" class="cta-button">International Students</a>
-            </div>
-            <div class="card">
-                <div class="feature-icon">🏠</div>
-                <h2>Student Life</h2>
-                <p>Modern accommodation, excellent facilities, and a vibrant student union await you.</p>
-                <a href="https://www.aston.ac.uk/student-life" class="cta-button">Student Experience</a>
-            </div>
-        </div>
-    </div>
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.logo img {
+    height: 100%;
+    width: auto;
+}
 
-/* ... (previous CSS remains the same) ... */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+    color: var(--aston-purple);
+}
+
+.nav-links a::after {
+    content: '▼';
+    font-size: 0.8em;
+    margin-left: 0.3em;
+}
+
+.hero {
+    background: linear-gradient(rgba(75, 46, 131, 0.9), rgba(75, 46, 131, 0.9)),
+                url('/api/placeholder/1920/1080');
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--aston-purple);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--aston-gold);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--aston-purple);
+    margin-bottom: 1rem;
+}
+
+.stats {
+    background: var(--aston-purple);
+    color: white;
+    padding: 3rem 0;
+    margin: 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--aston-gold);
+}
 
 .banner-section {
     padding: 2rem 0;
@@ -117,6 +159,8 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
 }
 
 .banner:hover {
@@ -155,6 +199,11 @@
     background: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.model-container:hover {
+    transform: translateY(-5px);
 }
 
 .section-title {
@@ -164,7 +213,21 @@
     text-align: center;
 }
 
+@media (max-width: 1024px) {
+    .nav-links {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .banner-grid {
         grid-template-columns: 1fr;
     }
@@ -173,4 +236,3 @@
         grid-template-columns: 1fr;
     }
 }
-
