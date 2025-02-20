@@ -263,6 +263,16 @@ body {
     background: var(--aston-gold);
 }
 
+.research-intro {
+    margin: 1rem 0 2rem 0;
+    line-height: 1.6;
+    max-width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+}
+
 .banner-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
